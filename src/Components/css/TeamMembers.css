@@ -1,0 +1,58 @@
+/* src/Components/css/TeamMembers.css */
+.team-members {
+    padding: 30px;
+    text-align: center;
+    background-color: #f4f4f4; /* Light background */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.team-members.dark {
+    background-color: #222; /* Dark background */
+}
+
+.members-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.member-card {
+    background-color: #fff; /* Light background */
+    border-radius: 10px;
+    margin: 15px;
+    padding: 15px;
+    width: 180px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.member-image {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.member-card h3,
+.member-card h4,
+.member-card p {
+    margin: 8px 0; /* Unified margins for consistency */
+}
+
+/* Dark mode styles */
+.team-members.dark .member-card {
+    background-color: #444; /* Dark background for cards */
+    color: #fff; /* Light text */
+}
+
+.team-members.dark .member-card h3,
+.team-members.dark .member-card h4,
+.team-members.dark .member-card p {
+    color: #fff; /* Ensure text is visible */
+}

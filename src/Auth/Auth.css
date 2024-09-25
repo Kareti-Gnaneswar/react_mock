@@ -1,0 +1,73 @@
+/* src/Auth/Auth.css */
+.auth-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f8f9fa; /* Light background for a softer look */
+    padding: 40px; /* Increased padding for a spacious feel */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Softer shadow for modern look */
+    border-radius: 12px;
+    width: 400px; /* Adjusted width for a better fit */
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    border: 1px solid #007bff; /* Blue border for a cohesive theme */
+}
+
+/* Heading styles */
+.auth-modal h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #007bff; /* Blue color for headings */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    font-size: 1.5rem; /* Slightly larger heading */
+}
+
+/* Input field styles */
+.auth-modal input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+/* Input field focus effect */
+.auth-modal input:focus {
+    outline: none;
+    border-color: #0056b3; /* Darker blue on focus */
+}
+
+/* Button styles */
+.auth-modal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Button hover effect */
+.auth-modal button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Paragraph link styles */
+.auth-modal p {
+    text-align: center;
+    color: #007bff; /* Link color */
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .auth-modal {
+        width: 90%; /* Make modal responsive on smaller screens */
+    }
+}

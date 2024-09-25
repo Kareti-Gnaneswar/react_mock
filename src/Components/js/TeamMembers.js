@@ -7,19 +7,19 @@ const TeamMembers = ({ isDarkMode }) => { // Accept isDarkMode prop
         { 
             name: 'Gnaneswar', 
             role: 'Founder and CEO', 
-            image: 'https://media.licdn.com/dms/image/v2/D5603AQEmZc3ZNQbwAg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726319583959?e=1732752000&v=beta&t=Yrh9W8igcVhoNbNsdA0EdA73MxCG9pOuiUkW3LN4syI',
+            image: 'https://via.placeholder.com/150',
             description: 'Gnaneswar is an AI engineer with 5 years of experience in building intelligent systems.'
         },
         { 
             name: 'Hemanth', 
             role: 'ML Engineer', 
-            image: 'https://media.licdn.com/dms/image/v2/D5603AQHpHbAc0xGzBQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695139110426?e=1732752000&v=beta&t=ofuCF-7MedPxfI-l6iNemUOcosXtUEeawaLoYFa_RcA',
+            image: 'https://via.placeholder.com/150',
             description: 'Hemanth specializes in data analysis and machine learning algorithms.'
         },
         { 
             name: 'Chandu', 
             role: 'ML Researcher', 
-            image: 'https://media.licdn.com/dms/image/v2/D5635AQG83xPDQ4HSsA/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1694596965909?e=1727895600&v=beta&t=1xUCL_8l_hDSjkkZuDNVw8Wm2BHeX8m8GUsWYswVrdk',
+            image: 'https://via.placeholder.com/150',
             description: 'Chandu is focused on research and development of new ML techniques.'
         },
         { 

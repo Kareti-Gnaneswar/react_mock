@@ -6,7 +6,7 @@ import Login from './Auth/Login';
 import Signup from './Auth/Signup'; 
 import TeamMembers from './Components/js/TeamMembers';
 import Exams from './Components/js/Exams';
-import ExamSidebar from './Components/js/ExamSidebar';
+import MiniNavBar from './Components/js/MiniNavBar'; // Import the MiniNavBar
 import ProfileCard from './Components/js/ProfileCard';
 
 const HomePage = () => {
@@ -107,7 +107,8 @@ const HomePage = () => {
             {isLoginOpen && <Login onClose={toggleLogin} onSignup={toggleSignup} onLogin={handleLogin} />}
             {isSignupOpen && <Signup onClose={toggleSignup} />} 
 
-            <ExamSidebar onSubjectSelect={handleSubjectSelect} />
+            {/* Add the MiniNavBar component */}
+            <MiniNavBar onCourseSelect={handleSubjectSelect} /> 
 
             <div className="main-content">
                 <header className="header">

@@ -1,0 +1,27 @@
+/* src/Components/js/MiniNavBar.css */
+.mini-navbar {
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    padding: 5px 0; /* Add some padding */
+    background-color: #007bff; /* Background color */
+}
+
+.course-link {
+    margin: 0 15px; /* Space between links */
+    font-size: 1rem; /* Increase font size */
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.course-link:hover {
+    color: #d1e7fd; /* Lighter shade on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .course-link {
+        font-size: 1rem; /* Adjust font size for mobile */
+        margin: 0 10px; /* Reduce margin */
+    }
+}

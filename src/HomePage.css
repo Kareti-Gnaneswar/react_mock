@@ -14,21 +14,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-bottom: 1px solid #ccc;
     background-color: #007bff; /* Blue color for navbar */
+    flex-wrap: wrap; /* Allow wrapping for mobile */
 }
 
 .navbar .logo {
-    font-size: 2rem; /* Increased size of company name */
+    font-size: 1.5rem; /* Reduced size for better responsiveness */
     font-weight: bold;
     color: white; /* White color for the logo */
 }
 
 /* Navbar links styles */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem; /* Space between elements */
+}
+
 .navbar-links a {
     color: white;
-    margin: 0 1rem; /* Gap between navbar links */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
@@ -38,6 +45,15 @@
     color: #e0e0e0; /* Light gray on hover */
 }
 
+/* Responsive navbar adjustments */
+@media (max-width: 768px) {
+    .navbar .navbar-links {
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
 /* Button styles */
 .login-btn, .signup-btn, .theme-toggle {
     padding: 0.5rem 1rem;
@@ -45,108 +61,133 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    margin: 0 0.5rem; /* Adds horizontal gap between buttons */
+    margin: 0 0.5rem;
 }
 
 /* Light Mode Button Styles */
 .navbar.light .login-btn,
 .navbar.light .signup-btn {
-    background-color: #0056b3; /* Darker blue for light mode */
+    background-color: #0056b3;
     color: white;
 }
 
 .navbar.light .login-btn:hover,
 .navbar.light .signup-btn:hover {
-    background-color: #003d80; /* Even darker blue on hover */
+    background-color: #003d80;
 }
 
 /* Dark Mode Button Styles */
 .navbar.dark .login-btn,
 .navbar.dark .signup-btn {
-    background-color: #4c4c4c; /* Dark gray */
+    background-color: #4c4c4c;
     color: white;
 }
 
 .navbar.dark .login-btn:hover,
 .navbar.dark .signup-btn:hover {
-    background-color: #666; /* Lighter gray */
+    background-color: #666;
 }
 
 /* Theme toggle button styles */
 .theme-toggle {
-    background-color: #28a745; /* Green color */
+    background-color: #28a745;
     color: white;
 }
 
 .theme-toggle:hover {
-    background-color: #218838; /* Darker green */
+    background-color: #218838;
 }
 
 /* Profile button styles */
 .profile-btn {
-    background-color: #6c757d; /* Gray */
+    background-color: #6c757d;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 4px;
 }
 
 .profile-btn:hover {
-    background-color: #5a6268; /* Darker gray */
+    background-color: #5a6268;
 }
 
 /* Main content styles */
 .main-content {
-    padding: 2rem;
+    padding: 1.5rem;
+    text-align: center; /* Center content for mobile */
 }
 
 .header h1 {
     margin: 0;
+    font-size: 2rem; /* Adjust font size for better readability */
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive Main content */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .header p {
+        font-size: 1rem;
+    }
 }
 
 /* Footer styles */
 .footer {
     text-align: center;
     padding: 1rem 0;
-    background-color: #f1f1f1; /* Light gray for footer in light mode */
+    background-color: #f1f1f1;
     color: #333;
 }
 
-/* Footer for dark mode */
 .footer.dark {
-    background-color: #333; /* Dark background for footer in dark mode */
+    background-color: #333;
     color: #f5f5f5;
-}
-
-/* Responsive footer */
-.footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .footer p {
     margin: 0;
 }
 
-/* Responsive navbar */
-.navbar {
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-.navbar .navbar-links {
-    flex: 1; /* Allow links to take available space */
-    text-align: right; /* Align links to the right */
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack elements vertically */
+    .navbar .navbar-links {
+        flex-direction: column;
     }
     
-    .navbar .navbar-links {
-        text-align: center; /* Center align links on smaller screens */
-        margin-top: 1rem; /* Add some space above links */
+    .navbar .navbar-links a {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Adjustments for smaller screens (phones) */
+@media (max-width: 576px) {
+    .navbar .logo {
+        font-size: 1.2rem;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .login-btn, .signup-btn, .theme-toggle {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        padding: 0.5rem;
     }
 }

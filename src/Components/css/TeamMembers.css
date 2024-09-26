@@ -2,20 +2,22 @@
 .team-members {
     padding: 30px;
     text-align: center;
-    background-color: #f4f4f4; /* Light background */
+    background-color: #f4f4f4;
     transition: background-color 0.3s;
     position: relative; /* Position for the sidebar */
 }
 
 .team-members.dark {
-    background-color: #222; /* Dark background */
+    background-color: #222;
 }
 
+/* Members Container - Side Scroll */
 .members-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 15px;
+    overflow-x: auto; /* Horizontal scroll */
+    padding-bottom: 15px;
+    scroll-behavior: smooth;
 }
 
 .member-card {
@@ -26,6 +28,7 @@
     width: 180px;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
 }
 
 .member-card:hover {
@@ -93,6 +96,7 @@
     text-decoration: none;
 }
 
+/* Sidebar Toggle Button */
 .sidebar-toggle {
     position: fixed;
     top: 20px;
@@ -102,17 +106,29 @@
     color: #fff;
     border: none;
     cursor: pointer;
+    z-index: 1000;
+}
+
+/* Close Button */
+.close-btn {
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .members-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row; /* Horizontal scroll on mobile */
     }
 
     .member-card {
-        width: 100%; /* Full width for mobile */
+        width: 90%; /* Wider on mobile */
     }
 
     .sidebar-toggle {

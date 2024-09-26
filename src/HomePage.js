@@ -16,6 +16,7 @@ const HomePage = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
     const [selectedSubject, setSelectedSubject] = useState(null);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown menu
     const profileRef = useRef(null);
     const navigate = useNavigate();
 
@@ -68,6 +69,10 @@ const HomePage = () => {
         setSelectedSubject(subject);
     };
 
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
     return (
         <div className={`homepage ${isDarkMode ? 'dark' : 'light'}`}>
             <nav className="navbar">
@@ -100,14 +105,25 @@ const HomePage = () => {
                             <button className="signup-btn" onClick={toggleSignup}>Signup</button>
                         </>
                     )}
+                    {/* Hamburger Menu */}
+                    <div className="hamburger" onClick={toggleDropdown}>
+                        &#9776;
+                    </div>
                 </div>
+                {/* Dropdown Menu */}
+                {isDropdownOpen && (
+                    <div className="dropdown-menu">
+                        <a href="#about">About Us</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                )}
             </nav>
 
             {/* Modal for Login and Signup */}
             {isLoginOpen && <Login onClose={toggleLogin} onSignup={toggleSignup} onLogin={handleLogin} />}
             {isSignupOpen && <Signup onClose={toggleSignup} />} 
 
-            {/* Add the MiniNavBar component */}
+            {/* Add the MiniNavBar component */} 
             <MiniNavBar onCourseSelect={handleSubjectSelect} /> 
 
             <div className="main-content">

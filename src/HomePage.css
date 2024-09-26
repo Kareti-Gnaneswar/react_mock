@@ -14,14 +14,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.75rem 1.5rem; /* Keep padding minimal for small devices */
     border-bottom: 1px solid #ccc;
     background-color: #007bff; /* Blue color for navbar */
-    flex-wrap: wrap; /* Allow wrapping for mobile */
 }
 
+/* Logo styles */
 .navbar .logo {
-    font-size: 1.5rem; /* Reduced size for better responsiveness */
+    font-size: 1.5rem; /* Slightly smaller for a consistent look */
     font-weight: bold;
     color: white; /* White color for the logo */
 }
@@ -30,8 +30,7 @@
 .navbar-links {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem; /* Space between elements */
+    gap: 1rem; /* Adjust space between links */
 }
 
 .navbar-links a {
@@ -47,21 +46,24 @@
 
 /* Responsive navbar adjustments */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Keep items in a row */
+        overflow: hidden; /* Prevent overflow */
+    }
     .navbar .navbar-links {
-        justify-content: center;
-        width: 100%;
-        margin-top: 1rem;
+        justify-content: flex-end; /* Align links to the right */
     }
 }
 
 /* Button styles */
 .login-btn, .signup-btn, .theme-toggle {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem; /* Keep padding minimal */
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
-    margin: 0 0.5rem;
+    margin-left: 0.5rem; /* Keep margin consistent */
+    font-size: 0.9rem; /* Consistent font size */
 }
 
 /* Light Mode Button Styles */
@@ -98,42 +100,21 @@
     background-color: #218838;
 }
 
-/* Profile button styles */
-.profile-btn {
-    background-color: #6c757d;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-}
-
-.profile-btn:hover {
-    background-color: #5a6268;
-}
-
 /* Main content styles */
 .main-content {
-    padding: 1.5rem;
+    padding: 1.5rem; /* Keep padding for layout */
     text-align: center; /* Center content for mobile */
 }
 
+/* Header styles */
 .header h1 {
     margin: 0;
-    font-size: 2rem; /* Adjust font size for better readability */
+    font-size: 2rem; /* Adjusted size for consistency */
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Consistent size */
     margin: 0.5rem 0;
-}
-
-/* Responsive Main content */
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.8rem;
-    }
-    .header p {
-        font-size: 1rem;
-    }
 }
 
 /* Footer styles */
@@ -156,38 +137,75 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .navbar .navbar-links {
-        flex-direction: column;
+        gap: 0.5rem; /* Reduce gap for small devices */
     }
     
     .navbar .navbar-links a {
-        margin: 0.5rem 0;
+        font-size: 0.9rem; /* Slightly smaller font size for links */
     }
 }
 
 /* Adjustments for smaller screens (phones) */
 @media (max-width: 576px) {
     .navbar .logo {
-        font-size: 1.2rem;
+        font-size: 1.5rem; /* Consistent size */
     }
 
     .main-content {
-        padding: 1rem;
-    }
-
-    .login-btn, .signup-btn, .theme-toggle {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+        padding: 1rem; /* Reduced padding */
     }
 
     .header h1 {
-        font-size: 1.5rem;
+        font-size: 1.5rem; /* Smaller header size */
     }
 
     .header p {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Smaller paragraph size */
     }
 
     .footer {
-        padding: 0.5rem;
+        padding: 0.5rem; /* Reduced footer padding */
+    }
+}
+/* Add to your HomePage.css */
+
+/* Hamburger icon */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    position: absolute; /* Overlap the content */
+    background-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5rem;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+}
+
+/* Show dropdown on menu toggle */
+.dropdown-menu.show {
+    display: flex; /* Show dropdown */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hide links on small screens */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon */
     }
 }

@@ -1,34 +1,30 @@
-/* General styles */
+/* src/Components/css/TeamMembers.css */
 .team-members {
     padding: 30px;
     text-align: center;
-    background-color: #f4f4f4;
-    transition: background-color 0.3s;
-    position: relative; /* Position for the sidebar */
+    background-color: #f4f4f4; /* Light background */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .team-members.dark {
-    background-color: #222;
+    background-color: #222; /* Dark background */
 }
 
-/* Members Container - Side Scroll */
 .members-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 15px;
-    overflow-x: auto; /* Horizontal scroll */
-    padding-bottom: 15px;
-    scroll-behavior: smooth;
 }
 
 .member-card {
-    background-color: #fff;
+    background-color: #fff; /* Light background */
     border-radius: 10px;
     margin: 15px;
     padding: 15px;
     width: 180px;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    min-width: 180px;
 }
 
 .member-card:hover {
@@ -46,102 +42,17 @@
 .member-card h3,
 .member-card h4,
 .member-card p {
-    margin: 8px 0;
+    margin: 8px 0; /* Unified margins for consistency */
 }
 
 /* Dark mode styles */
 .team-members.dark .member-card {
-    background-color: #444;
-    color: #fff;
+    background-color: #444; /* Dark background for cards */
+    color: #fff; /* Light text */
 }
 
 .team-members.dark .member-card h3,
 .team-members.dark .member-card h4,
 .team-members.dark .member-card p {
-    color: #fff;
-}
-
-/* Sidebar styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hidden by default */
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    transition: 0.3s;
-    padding: 20px;
-}
-
-.sidebar.open {
-    left: 0; /* Show sidebar when open */
-}
-
-.sidebar h2 {
-    margin-top: 0;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin: 20px 0;
-}
-
-.sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Sidebar Toggle Button */
-.sidebar-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* Close Button */
-.close-btn {
-    background-color: transparent;
-    color: #fff;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .members-container {
-        flex-direction: row; /* Horizontal scroll on mobile */
-    }
-
-    .member-card {
-        width: 90%; /* Wider on mobile */
-    }
-
-    .sidebar-toggle {
-        left: 10px;
-    }
-}
-
-@media (min-width: 769px) {
-    .sidebar {
-        display: none; /* Hide sidebar on larger screens */
-    }
-
-    .sidebar-toggle {
-        display: none; /* Hide toggle button on larger screens */
-    }
+    color: #fff; /* Ensure text is visible */
 }

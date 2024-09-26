@@ -1,8 +1,14 @@
 // src/Components/js/TeamMembers.js
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/TeamMembers.css'; // Ensure this path is correct
 
-const TeamMembers = ({ isDarkMode }) => { // Accept isDarkMode prop
+const TeamMembers = ({ isDarkMode }) => { 
+    const [sidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
+
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen);
+    };
+
     const members = [
         { 
             name: 'Gnaneswar', 
@@ -31,23 +37,38 @@ const TeamMembers = ({ isDarkMode }) => { // Accept isDarkMode prop
         {
             name: 'Priya',
             role: 'Backend Developer',
-            image: 'https://via.placeholder.com/150', // Placeholder image
+            image: 'https://via.placeholder.com/150',
             description: 'Priya has expertise in building scalable backend systems and APIs.'
         }
     ];
 
     return (
-        <div className={`team-members ${isDarkMode ? 'dark' : 'light'}`}> {/* Apply class based on isDarkMode */}
-            <h2>Meet Our Team</h2>
-            <div className="members-container">
-                {members.map((member, index) => (
-                    <div className="member-card" key={index}>
-                        <img src={member.image} alt={`${member.name}`} className="member-image" />
-                        <h3>{member.name}</h3>
-                        <h4>{member.role}</h4>
-                        <p>{member.description}</p>
-                    </div>
-                ))}
+        <div className={`team-members ${isDarkMode ? 'dark' : 'light'}`}>
+            <button className="sidebar-toggle" onClick={toggleSidebar}>
+                {sidebarOpen ? 'Close Menu' : 'Open Menu'}
+            </button>
+
+            <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+                <h2>Sidebar</h2>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div className="team-content">
+                <h2>Meet Our Team</h2>
+                <div className="members-container">
+                    {members.map((member, index) => (
+                        <div className="member-card" key={index}>
+                            <img src={member.image} alt={`${member.name}`} className="member-image" />
+                            <h3>{member.name}</h3>
+                            <h4>{member.role}</h4>
+                            <p>{member.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
